@@ -8,7 +8,7 @@ namespace UpdateLib
     public class Update : IDisposable
     {
         public event WriteLine UpdateMessage;
-
+        
         private UpdateConfig config;
         private Arguments arguments;
         private UpdateModel model;
