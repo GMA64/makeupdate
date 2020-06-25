@@ -1,13 +1,24 @@
+using ArgumentsLib;
 using FileUpdateModelLib;
 using System;
 using System.Security.Cryptography.X509Certificates;
 using UpdateModelLib;
 using Xunit;
+using static FileUpdateModelLib.FileUpdateModel;
 
 namespace FileUpdateModelLibTest
 {
-    public class FileUpdateModul
+    public class FileUpdateModulTest
     {
+        private string[] args =
+{
+            "-enable",
+            "-text",
+            "Das ist ien Test"
+        };
+
+        //Arguments args = new Arguments()
+
         [Fact]
         public void FileUpdateModelSetNewModel_PassingTest()
         {
@@ -25,10 +36,13 @@ namespace FileUpdateModelLibTest
         }
 
         [Fact]
-        public void FileUpdateModelExecuteBeforeUpdate_PassingTest()
+        public void CheckingVerforeUpdate_PassingTest()
         {
-            FileUpdateModel update = new FileUpdateModel();            
+            //FileUpdateModelConfig config = new FileUpdateModelConfig(/*args*/);
+            FileUpdateModel update = new FileUpdateModel();
+
         }
+
 
     }
 }

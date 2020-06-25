@@ -10,5 +10,8 @@ namespace UpdateLib
         public string ModelPath { get; set; }
         public string Schema { get; set; }
         public string Model { get; set; }
+        public bool SkipBeforeUpdate { get; set; }
+        public bool SkipAfterUpdate { get; set; }
+        public bool SkipUpdate { get; set; }
     }
 }

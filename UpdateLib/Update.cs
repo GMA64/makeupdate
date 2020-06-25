@@ -8,7 +8,7 @@ namespace UpdateLib
     public class Update : IDisposable
     {
         public event WriteLine UpdateMessage;
-        
+
         private UpdateConfig config;
         private Arguments arguments;
         private UpdateModel model;
@@ -44,9 +44,16 @@ namespace UpdateLib
 
         private void ExecuteUpdateModel()
         {
-            model.BeforeUpdate();
-            model.Update();
-            model.AfterUpdate();
+            model.Loadagruments();  
+
+            if (!config.SkipBeforeUpdate)
+                model.BeforeUpdate();
+
+            if (config.SkipUpdate)
+                model.Update();
+
+            if (!config.SkipAfterUpdate)
+                model.AfterUpdate();
         }
 
         public void Dispose()

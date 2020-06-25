@@ -1,6 +1,9 @@
 ﻿using ArgumentsLib;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
 
 namespace UpdateModelLib
 {
@@ -11,10 +14,12 @@ namespace UpdateModelLib
         public abstract event WriteLine UpdateMessage;
         private string model;
 
+        public abstract void Loadagruments();
         public abstract void BeforeUpdate();
         public abstract void Update();
         public abstract void AfterUpdate();
 
+       
         public Arguments Arguments { get; set; }
         public string Model { get => this.model; set => this.model = value.Trim().ToLower(); }
     }
